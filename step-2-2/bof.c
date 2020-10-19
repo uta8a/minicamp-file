@@ -1,10 +1,11 @@
 // reference: http://inaz2.hatenablog.com/entry/2014/07/04/001851
 /* bof.c */
 #include <stdio.h>
-
-int main()
-{
-    char buf[10];
+void vuln() {
+    system("/bin/sh");
+}
+int main(void) {
+    char buf[50];
     setlinebuf(stdout);
     printf("buf = %p\n", buf);
     gets(buf);
